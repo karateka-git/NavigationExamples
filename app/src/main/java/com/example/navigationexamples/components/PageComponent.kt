@@ -1,7 +1,7 @@
 package com.example.navigationexamples.components
 
-class PageComponent : IPageComponent {
+class PageComponent(private val number: Int) : IPageComponent {
 
     override val model: PageData
-        get() = PageData("Test")
+        get() = PageData("Test $number")
 }
