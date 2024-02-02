@@ -27,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.arkivanov.decompose.defaultComponentContext
 import com.example.navigationexamples.components.RootComponent
+import com.example.navigationexamples.presentation.RootContent
 import com.example.navigationexamples.ui.theme.NavigationExamplesTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,12 +41,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    val testClass = remember {
-                        mutableStateOf(
-                            TestClass(listOf("Первый"))
-                        )
-                    }
-                    TestContent(testClass = testClass.value, addNewItem = { testClass.value.items = testClass.value.items.plus(it) })
+                    RootContent(rootComponent)
                 }
             }
         }
